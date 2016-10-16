@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+                  <div class="slides">
+                    <!-- {{{ Begin slides -->
+                    <section id="titre" class="slide level1">
+                      <p><img src="images/au_secours.png" class="plain" alt="Au secours, on n'a pas de projet python dans ma boite" /></p>
+                      <p><img src="images/pyconfr.png" class="plain" alt="pyconfr" width="250" /></p>
+                    </section>
+                    <section id="moi" class="slide level1">
+                      <p><img src="images/bio.png" class="plain" alt="Moi, j'aime Python, Vim et le TDD" /></p>
+                    </section>
+                    <section id="automatiser-les-tâches-de-bureau" class="slide level1">
+                      <p><img class="plain" src="images/automatiser_le_travail.png" alt="image" /></p>
+                      <p><img class="plain" src="images/robot.png" alt="Robot" width="500" /></p>
+                      <aside class="notes">
+                        Par bureau, j’entends les tâches qui ne sont pas du code
+                      </aside>
+                    </section>
+                    <section id="pourquoi-cette-présentation" class="slide level1">
+                      <section>
+                        <p><img class="plain" src="images/je_veux_simplifier.png" alt="je veux simplifier la vie des gens" /></p>
+                        <p class="fragment"><img class="plain" src="images/a_commencer_par_la_mienne.png" width="450" alt="à commencer par la mienne" /></p>
+                      </section>
+                      <section>
+                        <p> <img class="plain" src="images/pas_sur_tout_le_code.png" /></p>
+                      </section>
+                      <section>
+                        <p> <img class="plain" src="images/pas_a_la_main.png" /></p>
+                      </section>
+                      <section>
+                        <p> <img class="plain" src="images/je_reste_interdit.png" /></p>
+                      </section>
+                    </section>
+                    <section>
+                      <p><img src="images/pourquoi_python.png" alt="image" class="plain"/></p>
+                      <p class="fragment">Livré avec les piles <img style="vertical-align: middle"src="images/piles.png" alt="image" class="plain" width="100" /></p>
+                      <p class="fragment">Aujourd’hui vient avec PIP</p>
+                      <p class="fragment">Multi-plateforme</p>
+                      <p class="fragment">Simple à prendre en main</p>
+                      <aside class="notes">
+                        <p>Livré avec les piles. <em>Je peux me reposer énormément sur la bibliothèque standard</em></p>
+                        <p>Aujourd’hui vient avec PIP. <em>J'ai moins d'aversion à ajouter des dépendances</em></p>
+                        <p>Multi-plateforme. <em>Je peux développer un programme sous Windows et l'exécuter où je veux</em></p>
+                        <p>Simple à prendre en main. <em>Je sais que je peux montrer mes scripts à un autre développeur, il pourra les comprendre et éventuellement les faire évoluer</em></p>
+                      </aside>
+                    </section>
+                    <section id="exemples" class="slide level1">
+                      <p><img class="plain" src="images/exemples.png" alt="Exemples"></p>
+                    </section>
+                    <section>
+                      <section>
+                        <p><img class="plain" src="images/pas_le_meme_nombre.png" alt="On n'a pas le même nombre d'index sur la base de dev et la base de prod !" /></p>
+                      </section>
+                      <section>
+                        <pre><code>ensemble1 = set((l.strip() for l in open(&quot;fichier1&quot;).readlines()))
+ensemble2 = set((l.strip() for l in open(&quot;fichier2&quot;).readlines()))
+
+with open(&quot;difference.txt&quot;, &quot;w&quot;) as f:
+    f.write(&#39;\n&#39;.join(sorted(ensemble1.difference(ensemble2))))</code></pre>
+                        <aside class="notes">
+                          On nous fournit 2 fichiers contenant les index pour
+                          chaque base. Ils ne sont pas dans le même ordre... Mon
+                          collègue javaiste est paniqué
+                        </aside>
+                      </section>
+                    </section>
+                    <section>
+                      <section>
+                        <p><img class="plain" src="images/il_faut_documenter.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p>Je récupère le WSDL</p>
+                        <p class="fragment">Je récupère la documentation code au format XML</p>
+                        <p class="fragment">Je croise le tout pour sortir du HTML</p>
+                        <p class="fragment">Je transforme ça en Word avec pandoc</p>
+                        <aside class="notes">
+                          <ul>
+                            <li>C'est rapide</li>
+                            <li>On ne documente que ce qui est exposé</li>
+                            <li>On n'oublie rien</li>
+                            <li>La source de documentation est le code</li>
+                          </ul>
+                        </aside>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/outils.png"/></p>
+                        <p class="fragment">requests</p>
+                        <p class="fragment">BeautifulSoup</p>
+                        <p class="fragment">Pandoc</p>
+                      </section>
+                    </section>
+                    <section>
+                      <section>
+                        <p><img class="plain" src="images/le_client_veut_du_hpalm.png" alt="Sortir un cahie de tests HPALM" /></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/features-integrate-alm-tests.png" alt="HPALM usine à gaz"></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/approche1.png" alt="image" /></p>
+                        <p>Contexte : traitement d’alimentation d’un entrepôt de données</p>
+                        <ul>
+                          <li class="fragment">Une méthode par type de vérification</li>
+                          <li class="fragment">Le Python scanne les méthodes et leurs paramètres</li>
+                          <li class="fragment">Il me les traduit en tests dans un fichier texte</li>
+                          <li class="fragment">J’ai plus qu’à copier coller dans l’outil et valider les campagnes de tests (merci Vim)</li>
+                        </ul>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/approche2.png" alt="image" /></p>
+                        <p>Contexte : test d’API REST</p>
+                        <ul>
+                        <li class="fragment">Mes cas de tests sont stockés sous forme de listes et de dicts dans un fichier Python.</li>
+                        <li class="fragment">Ils sont récupérés par des tests py.test pour tester l’API</li>
+                        <li class="fragment">Ils sont traduits en cas de test que je peux copier coller dans l’outil</li>
+                        </ul>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/outils.png"/></p>
+                        <p class="fragment">Les piles de python…</p>
+                        <p class="fragment">Requests pour les tests d’API</p>
+                        <p class="fragment">Vim pour aller vite dans les copier coller :-)</p>
+                        <aside class="notes">
+                          <p>Gains :</p>
+                          <ul>
+                            <li>C'est rapide</li>
+                            <li>Je me base sur des tests automatisés : je sais rapidement si ça passe ou pas</li>
+                          </ul>
+                          <p>Limitations :</p>
+                          <p>Je fais moi-même le copier coller :-(</p>
+                        </aside>
+                      </section>
+                    </section>
+                    <section>
+                      <section>
+                        <p><img class="plain" src="images/avoir_le_detail_des_appels.png" alt="Avoir le detail des appels" /></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" width="450" src="images/digramme_de_sequence.png" alt="Diagramme de sequence" /></p>
+                        </section>
+                        <section>
+                          <p class="fragment">Mise en place d’un logger pour tracer nos appels avec un formalisme précis</p>
+                          <p class="fragment">Transformation en représentation sous forme de fichier plat</p>
+                          <p class="fragment">Utilisation de <strong>seqdiag</strong></p>
+                          <aside class="notes">
+                            <p>Gains :</p>
+                            <ul>
+                              <li>C'est rapide</li>
+                              <li>C'est rejouable</li>
+                              <li>On peut ajouter les temps de traitement</li>
+                              <li>On a mis en place un monitoring en même temps</li>
+                            </ul>
+                          </aside>
+                      </section>
+                    </section>
+                    <section>
+                      <section>
+                        <p><img class="plain" src="images/la_chef_de_projet.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/generer_des_devis.png" alt="image" /></p>
+                        <p>Je me contente de saisir le nombre de jours par livrable.</p>
+                        <p>Je code le calcul du devis financier et la génération du document.</p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/creer_des_taches.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p>Ce qu’on faisait avant :</p>
+                        <ul>
+                          <li class="fragment">Exporter la liste des tâches en CSV depuis Excel.</li>
+                          <li class="fragment">Virer les accents, les lignes multiples, les virgules.</li>
+                          <li class="fragment">Charger en deux fois avec l’outil d’import CSV de la forge.</li>
+                          <li class="fragment">Rager parce que ça na pas marché et qu’il faut revoir le CSV.</li>
+                        </ul>
+                      </section>
+                      <section>
+                        <p>Je suis passé par là…</p>
+                        <ul>
+                          <li class="fragment">Récupèration des infos dans le fichier Excel.</li>
+                          <li class="fragment">Création de la hierarchie de tâches dans l’outil en utilisant l’API SOAP.</li>
+                        </ul>
+                        </section>
+                        <section>
+                          <p><img class="plain" src="images/outils.png"/></p>
+                          <p class="fragment">openpyxl</p>
+                          <p class="fragment">SUDS</p>
+                          <aside class="notes">
+                            <p>Gains :</p>
+                            <ul>
+                              <li>C’est rapide</li>
+                              <li>C’est sans erreur</li>
+                              <li>On a le droit aux accents</li>
+                              <li>On a le droit de faire des descriptions sur plusieurs lignes</li>
+                            </ul>
+                          </aside>
+                        </section>
+                        <section>
+                      <p><img class="plain" src="images/sortir_des_indicateurs.png" alt="image" /></p>
+                      </section>
+                      <section>
+                      <p>Ce qu’on faisait avant :</p>
+                      <ul>
+                        <li class="fragment">On obligeait les gens à indiquer dans le ticket les dates de création, prise en compte, livraison.</li>
+                        <li class="fragment">On copiait les tickets dans une feuille Excel.</li>
+                        <li class="fragment">On faisait de la « magie » pour sortir des indicateurs.</li>
+                      </ul>
+                      </section>
+                      <section>
+                        <p>Je suis passé par là…</p>
+                        <ul>
+                          <li class="fragment">Récupération des tickets au travers de l’API SOAP.</li>
+                          <li class="fragment">Calcul des temps de traitement en fonction des dates de changements d’état des tickets.</li>
+                          <li class="fragment">Génération d’un csv (à l’époque) chargé dans Excel.</li>
+                        </ul>
+                        <aside class="notes">
+                          <p>Gains :</p>
+                          <ul>
+                            <li>C’est rapide</li>
+                            <li>C’est sans erreur</li>
+                            <li>Il ne reste plus qu’à changer l’état des tickets au bon moment</li>
+                            <li>On n’a moins la possibilité de tricher</li>
+                          </ul>
+                        </aside>
+                      </section>
+                    </section>
+                    <section id="ce-que-ça-ma-apporté" class="slide level1">
+                      <p><img class="plain" src="images/ce_que_ca_m_a_apporte.png" alt="image" /></p>
+                        <p class="fragment">Du fun !</p>
+                        <p class="fragment">J’ai beaucoup appris et partagé sur Python</p>
+                        <p class="fragment">Je suis identifié comme référent</p>
+                        <p class="fragment">Des réticences</p>
+                    </section>
+                    <section id="votre-organisation-naime-peut-être-pas-lautomatisation" class="slide level1">
+                      <section>
+                        <p><img class="plain" src="images/certaines_personnes.png" alt="image" /></p>
+                        <aside class="notes">
+                          <p>Ceux sont celles qui se vantent de faire des livraisons le soir à 23h…</p>
+                          <p>&quot;J'ai dit au client qu'on relivrait la doc d'API aujourd'hui&quot;</p>
+                          <p>&quot;Euh OK, donne moi 5 minutes et je te l'envoie&quot;</p>
+                          <p>Plus tard…</p>
+                          <p>&quot;Ça ne va pas, on ne peux pas livrer ça, ça ne respecte pas le modèle de document&quot;</p>
+                          <p>&quot;Les équipes du client livrent la même chose !&quot;</p>
+                          <p>&quot;Je ne veux pas le savoir, applique le modèle de doc, on va être audité !&quot;</p>
+                        </aside>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/heroes.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/ce_n_est_pas_moi.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/si_on_scripte_ca.png" alt="image" /></p>
+                      </section>
+                    </section>
+                    <section id="conseils" class="slide level1">
+                      <section>
+                        <p><img class="plain" src="images/conseils.png"/></p>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/pensez_a_vous.png" alt="image" /></p>
+                        <aside class="notes">
+                          <p>Automatisez d'abord ce qui vous concerne. Essayez de sentir l'état d'esprit de votre organisation. Ne communiquez pas forcément tout de suite.</p>
+                        </aside>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/que_faut_il_automatiser.png" alt="image" /></p>
+                        <ul>
+                          <li class="fragment">Est-ce que j'ai une API ? Une CLI ?</li>
+                          <li class="fragment">Est-ce qu'il y a un risque d'erreur ?</li>
+                          <li class="fragment">Est-ce récurrent ?</li>
+                          <li class="fragment">Est-ce que le livrable sera utilisé ?</li>
+                        </ul>
+                      </section>
+                      <section>
+                      <p><img class="plain" src="images/restez_simples.png" alt="image" /></p>
+                      <aside class="notes">
+                        <ul>
+                          <li>Vous n'avez pas le temps</li>
+                          <li>Ce n'est pas du code de production, vous pouvez corriger et relancer</li>
+                          <li>Il n'est pas forcément nécessaire de prendre en compte tous les cas possibles.</li>
+                        </ul>
+                      </aside>
+                      </section>
+                      <section>
+                        <p><img class="plain" src="images/outils.png" alt="image" /></p>
+                          <p class="fragment">openpyxl</p>
+                          <p class="fragment">SUDS</p>
+                          <p class="fragment">requests</p>
+                          <p class="fragment">BeautifulSoup</p>
+                          <p class="fragment">py.test</p>
+                          <p class="fragment">pandoc</p>
+                      </section>
+                    </section>
+                    <section id="aller-plus-loin" class="slide level1">
+                      <section>
+                        <p><img class="plain" src="images/par_la.png" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p><a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></p>
+                        <p><img src="images/automate.jpg" alt="image" /></p>
+                      </section>
+                      <section>
+                        <p><a href="https://www.youtube.com/watch?v=RZ4Sn-Y7AP8">David Beazley: Discovering Python - PyCon 2014</a></p>
+                      </section>
+                    </section>
+                    <section>
+                      <p><img class="plain" src="images/merci.png" /></p>
+                    </section>
+                    <!-- }}} End slides -->
+                  </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
+
+<!-- 
+  vim: fdm=marker 
+-->
